@@ -1,0 +1,3 @@
+﻿  MyGitSystem.cpp
+C:\Users\mubit\source\repos\MyGitSystem\MyGitSystem.cpp(25,20): warning C4834: discarding return value of function with [[nodiscard]] attribute
+  MyGitSystem.vcxproj -> C:\Users\mubit\source\repos\MyGitSystem\x64\Debug\mygit.exe
