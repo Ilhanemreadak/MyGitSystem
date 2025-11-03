@@ -1,3 +1,8 @@
 ﻿  MyGitSystem.cpp
-C:\Users\mubit\source\repos\MyGitSystem\MyGitSystem.cpp(25,20): warning C4834: discarding return value of function with [[nodiscard]] attribute
-  MyGitSystem.vcxproj -> C:\Users\mubit\source\repos\MyGitSystem\x64\Debug\mygit.exe
+C:\Users\mubit\projects\MyGitSystem\MyGitSystem.cpp(56,20): warning C4834: discarding return value of function with [[nodiscard]] attribute
+C:\Users\mubit\projects\MyGitSystem\MyGitSystem.cpp(94,16): warning C4566: character represented by universal-character-name '\u0131' cannot be represented in the current code page (1252)
+C:\Users\mubit\projects\MyGitSystem\MyGitSystem.cpp(95,15): warning C4566: character represented by universal-character-name '\u0131' cannot be represented in the current code page (1252)
+C:\Users\mubit\projects\MyGitSystem\MyGitSystem.cpp(109,16): warning C4566: character represented by universal-character-name '\u0131' cannot be represented in the current code page (1252)
+C:\Users\mubit\projects\MyGitSystem\MyGitSystem.cpp(110,16): warning C4566: character represented by universal-character-name '\u0131' cannot be represented in the current code page (1252)
+C:\Users\mubit\projects\MyGitSystem\MyGitSystem.cpp(95,3): warning C4102: 'std': unreferenced label
+  MyGitSystem.vcxproj -> C:\Users\mubit\projects\MyGitSystem\x64\Debug\mygit.exe

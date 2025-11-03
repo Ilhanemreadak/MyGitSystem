@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\mubit\\source\\repos\\MyGitSystem\\",
+  "WorkspaceRootPath": "C:\\Users\\mubit\\projects\\MyGitSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FBD7C86B-70B6-4404-AA16-07D3D0C93FD2}|MyGitSystem.vcxproj|C:\\Users\\mubit\\source\\repos\\MyGitSystem\\MyGitSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{FBD7C86B-70B6-4404-AA16-07D3D0C93FD2}|MyGitSystem.vcxproj|C:\\Users\\mubit\\projects\\MyGitSystem\\MyGitSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{FBD7C86B-70B6-4404-AA16-07D3D0C93FD2}|MyGitSystem.vcxproj|solutionrelative:MyGitSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
@@ -84,23 +84,22 @@
               "DocumentIndex": 1,
               "Title": "__msvc_heap_algorithms.hpp",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\filesystem",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\filesystem",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\filesystem",
               "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\filesystem",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\filesystem",
+              "RelativeToolTip": "..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\filesystem",
               "ViewState": "AgIAADwMAAAAAAAAAAAlwFEMAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-10-30T12:58:28.824Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-30T12:58:28.824Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MyGitSystem.cpp",
-              "DocumentMoniker": "C:\\Users\\mubit\\source\\repos\\MyGitSystem\\MyGitSystem.cpp",
+              "DocumentMoniker": "C:\\Users\\mubit\\projects\\MyGitSystem\\MyGitSystem.cpp",
               "RelativeDocumentMoniker": "MyGitSystem.cpp",
-              "ToolTip": "C:\\Users\\mubit\\source\\repos\\MyGitSystem\\MyGitSystem.cpp",
+              "ToolTip": "C:\\Users\\mubit\\projects\\MyGitSystem\\MyGitSystem.cpp",
               "RelativeToolTip": "MyGitSystem.cpp",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAACkAAAAAAAAAAAAAwGgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-10-30T12:22:07.486Z",
               "EditorCaption": ""
