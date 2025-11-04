@@ -37,7 +37,7 @@ int main(int argc, char* argv[])
 	}
 	else if (fcommand == "hash-object")
 	{
-		mygit_hash_object(argv);
+		mygit_hash_object(argc, argv);
 	}
 	else
 	{
@@ -88,53 +88,79 @@ int mygit_init() { // Initializes a mygit repository in the current directory
 	return 0;
 }
 
-int mygit_hash_object(char* argv[]) { // Hashes a file and stores it in the objects directory
+int mygit_hash_object(int argc,char* argv[]) { // Hashes a file and stores it in the objects directory
 
-	if (argv[2] == nullptr) {
-		std::cout << "\n(En) Usage: mygit hash-object [-t <type>] [-w] [--path=<file>}\n(Tr) Kullanım: mygit hash-object [-t <tip>] [-w] [--path=<tip>]\n";
-		std:cout << "(En) Types: commit,tree,blob and tag. Default: blob\n(Tr) Tipler: commit,tree,blob and tag. Varsayılan: blob\n";
-		return 1;
-	}
-
-	string commandOption = argv[2];
-
-	if (commandOption != "--help" && commandOption != "-w" && commandOption != "-t" && commandOption.find("--path=") == string::npos) {
-		std::cout << "\n(En) Warning: Unknown option!\n(Tr) Uyari: Bilinmeyen secenek!\n";
-		return 1;
-	}
+	ObjectType objType = BLOB; // Default object type is blob
+	string filePath;
+	bool writeOption = false;
+	bool helpOption = false;
 
 
-	if (commandOption == "--help")
-	{
-		std::cout << "\n(En) Usage: mygit hash-object [-t <type>] [-w] [--path=<file>}\n(Tr) Kullanim: mygit hash-object [-t <tip>] [-w] [--path=<tip>]\n";
-		std::cout << "(En) Types: commit,tree,blob and tag. Default: blob\n(Tr) Tipler: commit,tree,blob and tag. Varsayılan: blob\n";
-		return 0;
-	}
-	else if (commandOption.find("--path=") != string::npos)
-	{
-		string filePath = commandOption.substr(7); // Extract the file path from the argument
-		std::cout << "(En) File path: " << filePath << "\n(Tr) Dosya yolu: " << filePath << "\n";
-
-	}
-	else if (commandOption == "-t")
-	{
-		if (argv[3] == nullptr) {
-			std::cout << "\n(En) Warning: You need to give a type after -t option!\n(Tr) Uyari: -t seceneginden sonra bir tip girmeniz gerekiyor!\n";
+	for(int i=2;i<argc;i++){
+		if(argv[i]==nullptr){
+			break;
+		}
+		else if(argv[i]==string("--help")){
+			helpOption=true;
+		}
+		else if(argv[i]==string("-w")){
+			writeOption=true;
+		}
+		else if(argv[i]==string("-t")){
+			if(argv[i+1]==nullptr){
+				std::cout << "\n(En) Warning: You need to give a type after -t option!\n(Tr) Uyari: -t seceneginden sonra bir tip girmeniz gerekiyor!\n";
+				return 1;
+			}
+			string typeOption=argv[i+1];
+			if(typeOption=="commit"){
+				objType=COMMIT;
+			}
+			else if(typeOption=="tree"){
+				objType=TREE;
+			}
+			else if(typeOption=="blob"){
+				objType=BLOB;
+			}
+			else if(typeOption=="tag"){
+				objType=TAG;
+			}
+			else{
+				std::cout << "\n(En) Warning: Unknown type!\n(Tr) Uyari: Bilinmeyen tip!\n";
+				return 1;
+			}
+		}
+		else if (string(argv[i]).find("--path=") == 0) {
+            filePath = string(argv[i]).substr(7);
+        }
+		else{
+			std::cout << "\n(En) Warning: Unknown option!\n(Tr) Uyari: Bilinmeyen secenek!\n";
 			return 1;
 		}
-		string typeOption = argv[3];
-		if (typeOption != "commit" && typeOption != "tree" && typeOption != "blob" && typeOption != "tag") {
-			std::cout << "\n(En) Warning: Unknown type!\n(Tr) Uyari: Bilinmeyen tip!\n";
-			return 1;
-		}
-		std::cout << "(En) Type option selected: " << typeOption << "\n(Tr) Tip secenegi secildi: " << typeOption << "\n";
 	}
-	else if (commandOption == "-w") {
-		std::cout << "(En) Write option selected\n(Tr) Yazma secenegi secildi\n";
-	}
+
+	if (argc < 3) {
+        std::cout << "\n(En) Usage: mygit hash-object [-t <type>] [-w] [--path=<file>}\n(Tr) Kullanım: mygit hash-object [-t <tip>] [-w] [--path=<tip>]\n";
+        std::cout << "(En) Types: commit,tree,blob and tag. Default: blob\n(Tr) Tipler: commit,tree,blob and tag. Varsayılan: blob\n";
+        return 1;
+    }
+
+    if (helpOption)
+    {
+        std::cout << "\n(En) Usage: mygit hash-object [-t <type>] [-w] [--path=<file>}\n(Tr) Kullanim: mygit hash-object [-t <tip>] [-w] [--path=<tip>]\n";
+        std::cout << "(En) Types: commit,tree,blob and tag. Default: blob\n(Tr) Tipler: commit,tree,blob and tag. Varsayılan: blob\n";
+        return 0;
+    }
+
+    if (writeOption)
+    {
+        std::cout << "Write option selected\n";
+    }
+
 	std::cout << "hash-object command selected\n";
 	return 0;
 }
+
+enum ObjectType { BLOB, TREE, COMMIT, TAG };
 
 int mygit_cat_file() { // Displays the content of a hashed object
 	return 0;
